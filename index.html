@@ -2,19 +2,19 @@
 <html>
     <script>
 
-function parse(play) {
+    function parse(play) {
 
-    if (play.toLowerCase() === "rock") {
-        return "rock";
-    } else if (play.toLowerCase() === "scissors" || play.toLowerCase() === "scissor") {
-        return "scissors"
-    } else if (play.toLowerCase() === "paper") {
-        return "paper"
-    } else {
-        return "Please enter 'rock' 'paper' or 'scissors'"
-    }
+        if (play.toLowerCase() === "rock") {
+            return "rock";
+        } else if (play.toLowerCase() === "scissors" || play.toLowerCase() === "scissor") {
+            return "scissors"
+        } else if (play.toLowerCase() === "paper") {
+            return "paper"
+        } else {
+            return "Please enter 'rock' 'paper' or 'scissors'"
+        }
 
-}        
+    }        
 
     let rok = "rock"
     let scis = "scissors"
@@ -31,7 +31,14 @@ function parse(play) {
         }
     }
 
-   
-    (Math.random() * 10 + 1)
+
+    function game(str) {
+        
+
+        playRound (parse(str), computerPlay(Math.random() * 10 + 1))
+
+
+    }
+
     </script>
 </html>
