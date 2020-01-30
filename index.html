@@ -30,27 +30,27 @@
     function playRound(playerSelection, computerSelection) {
         if (playerSelection == "rock") {
             if (computerSelection == "rock") {
-                return "Two rocks! It's a draw."
+                return "dTwo rocks! It's a draw."
             } else if (computerSelection == "scissors") {
-                return "Rock smashes scissors! You win."
+                return "wRock smashes scissors! You win."
             } else {
-                return "Paper covers rock. Computer wins this one."
+                return "lPaper covers rock. Computer wins this one."
             }
         } else if (playerSelection == "scissors") {
             if (computerSelection == "rock") {
-                return "Your scissors are shattered by the computer's rock. Round lost."
+                return "lYour scissors are shattered by the computer's rock. Round lost."
             } else if (computerSelection == "scissors") {
-                return "It happens before you realize it: The only thing you can even process is the spine-tingling hiss and clang of sharply-honed steel against steel. Stalemate... For now."
+                return "dIt happens before you realize it: The only thing you can even process is the spine-tingling hiss and clang of sharply-honed steel against steel. Stalemate... For now."
             } else {
-                return "The resistance is nonexistant. The computer played paper. You left that paper in two."
+                return "wThe resistance is nonexistant. The computer played paper. You left that paper in two."
             }
-        } else if (playerSelection == paper) {
+        } else if (playerSelection == "paper") {
             if (computerSelection == "rock") {
-                return "Writing all these is harder than it sounds. Win"
+                return "wWriting all these is harder than it sounds. Win"
             } else if (computerSelection == "scissors") {
-                return "Making paper sound cool is hard. Lose"
+                return "lMaking paper sound cool is hard. Lose"
             } else {
-                return "What does it look like when two pieces of paper fight anyway?"
+                return "dWhat does it look like when two pieces of paper fight anyway?"
             }
                        
         }
@@ -62,7 +62,7 @@
 
         let flav = playRound(parse(str), computerPlay(Math.random() * 10 + 1))
 
-        return flav;
+        return flav.slice(1);
     }
 
     </script>
