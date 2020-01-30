@@ -18,9 +18,9 @@
     
     function computerPlay(num) {
 
-        if (num > 6.66) {
+        if (num > 7) {
             return "rock";
-        } else if (num > 3.33) {
+        } else if (num > 4) {
             return "scissors";
         } else {
             return "paper";
@@ -60,9 +60,10 @@
     function game(str) {
         
 
-        let flav = playRound(parse(str), computerPlay(Math.random() * 10 + 1))
+        let flav = playRound(parse(str), computerPlay(Math.random() * 10 + 1));
 
         return flav.slice(1);
+        return flav.slice(0,1)
     }
 
     </script>
