@@ -60,9 +60,9 @@
     function game(str) {
         
 
-        playRound (parse(str), computerPlay(Math.random() * 10 + 1))
+        let result = playRound(parse(str), computerPlay(Math.random() * 10 + 1))
 
-
+        return result;
     }
 
     </script>
