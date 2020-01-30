@@ -2,21 +2,36 @@
 <html>
     <script>
 
-    let rock = "rock"
+function parse(play) {
+
+    if (play.toLowerCase() === "rock") {
+        return "rock";
+    } else if (play.toLowerCase() === "scissors" || play.toLowerCase() === "scissor") {
+        return "scissors"
+    } else if (play.toLowerCase() === "paper") {
+        return "paper"
+    } else {
+        return "Please enter 'rock' 'paper' or 'scissors'"
+    }
+
+}        
+
+    let rok = "rock"
     let scis = "scissors"
     let papr = "paper"
 
     function computerPlay(num) {
 
         if (num > 6.66) {
-            return rock;
+            return rok;
         } else if (num > 3.33) {
             return scis;
         } else {
             return papr;
         }
     }
-    
+
+   
     (Math.random() * 10 + 1)
     </script>
 </html>
