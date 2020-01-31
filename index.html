@@ -92,14 +92,23 @@ let computerScore = 0
 
     function game() {
         
-        let str = prompt()
+        let str 
+        
+        for (;playerScore < 5 && computerScore < 5;) {
+            str = prompt("Rock. Paper! Scissors!!")
 
-        let flav = playRound(parse(str), computerPlay(Math.random() * 10 + 1));
-        score(flav.slice(0,1))
+            let flav = playRound(parse(str), computerPlay(Math.random() * 10 + 1));
+            score(flav.slice(0,1))
 
-        console.log(flav.slice(1))
-        console.log("YOU: " + playerScore + " || " + "COM: " + computerScore)
+            console.log("YOU: " + playerScore + " || " + "COM: " + computerScore)
+            console.log(flav.slice(1))
+        }
 
+        if (playerScore == 5) {
+            console.log("YOU WIN")
+        } else if (computerScore == 5) {
+            console.log("YOU LOSE")
+        }
     }
 
     </script>
