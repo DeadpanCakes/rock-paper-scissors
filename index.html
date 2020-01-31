@@ -1,6 +1,10 @@
 <!DOCTYPE html>
+
 <html>
     <script>
+
+let playerScore = 0
+let computerScore = 0
 
 //makes player input case insesitive 
     function parse(play) {
@@ -58,9 +62,6 @@
         }
     
     }
-    
-    let playerScore = 0
-    let computerScore = 0
 
 //accepts results by slicing prepended code from playRound and increments score based on that
     function score(result) {
@@ -75,18 +76,30 @@
     }
 
 
-
-//    function narr (playerScore, computerScore, flav) {
+//narration function meant to return messages based on the current score. It's more work than I realized, however, so I'm commenting it out
+//for now to focus on the important stuff
 //
+//    function narr (playerScore, computerScore, flav) {
+//        if (playerScore > computerScore) {
+//            switch(+playerScore - +computerScore) {
+//
+//            case 1:
+//               let 
+//
+//            }
+//        }
 //    }
 
-    function game(str) {
+    function game() {
         
+        let str = prompt()
 
         let flav = playRound(parse(str), computerPlay(Math.random() * 10 + 1));
+        score(flav.slice(0,1))
 
-        return flav.slice(1);
-        return flav.slice(0,1)
+        console.log(flav.slice(1))
+        console.log("YOU: " + playerScore + " || " + "COM: " + computerScore)
+
     }
 
     </script>
