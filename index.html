@@ -2,6 +2,7 @@
 <html>
     <script>
 
+//makes player input case insesitive 
     function parse(play) {
 
         if (play.toLowerCase() === "rock") {
@@ -27,6 +28,7 @@
         }
     }
 
+//resolves matchups; could be cleaned up, but need to learn more first
     function playRound(playerSelection, computerSelection) {
         if (playerSelection == "rock") {
             if (computerSelection == "rock") {
@@ -56,6 +58,27 @@
         }
     
     }
+    
+    let playerScore = 0
+    let computerScore = 0
+
+//accepts results by slicing prepended code from playRound and increments score based on that
+    function score(result) {
+        
+              
+        if (result == "w") {
+            ++playerScore
+        } else if (result == "l") {
+            ++computerScore
+        }
+
+    }
+
+
+
+//    function narr (playerScore, computerScore, flav) {
+//
+//    }
 
     function game(str) {
         
