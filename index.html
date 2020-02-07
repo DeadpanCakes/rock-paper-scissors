@@ -1,12 +1,33 @@
 <!DOCTYPE html>
 
 <html>
+
+<body>
+
+<h1></h1>
+
+<h3></h3>
+
+<button>
+
+</button>
+
+<button>
+
+</button>
+
+<button>
+
+</button>
+
+
+</body>
     <script>
 
 let playerScore = 0
 let computerScore = 0
 
-//makes player input case insesitive 
+
     function parse(play) {
 
         if (play.toLowerCase() === "rock") {
@@ -32,7 +53,7 @@ let computerScore = 0
         }
     }
 
-//resolves matchups; could be cleaned up, but need to learn more first
+
     function playRound(playerSelection, computerSelection) {
         if (playerSelection == "rock") {
             if (computerSelection == "rock") {
@@ -63,7 +84,7 @@ let computerScore = 0
     
     }
 
-//accepts results by slicing prepended code from playRound and increments score based on that
+
     function score(result) {
         
               
@@ -74,21 +95,6 @@ let computerScore = 0
         }
 
     }
-
-
-//narration function meant to return messages based on the current score. It's more work than I realized, however, so I'm commenting it out
-//for now to focus on the important stuff
-//
-//    function narr (playerScore, computerScore, flav) {
-//        if (playerScore > computerScore) {
-//            switch(+playerScore - +computerScore) {
-//
-//            case 1:
-//               let 
-//
-//            }
-//        }
-//    }
 
     function game() {
         
@@ -110,6 +116,17 @@ let computerScore = 0
             console.log("YOU LOSE")
         }
     }
+
+/*Go back to your “Rock Paper Scissors” game from a previous lesson and give it a simple UI so that the player can play the game by clicking on buttons rather than typing their answer in a prompt.
+
+    Copy your original code into a new file so you don’t lose it.
+    For now, remove the logic that plays exactly five rounds.
+    Create three buttons, one for each selection. Add an event listener to the buttons that calls your playRound function with the correct playerSelection every time a button is clicked. (you can keep the console.logs for this step)
+    Add a div for displaying results and change all of your console.logs into DOM methods.
+    Display the running score, and announce a winner of the game once one player reaches 5 points.
+    You will likely have to refactor (rework/rewrite) your original code to make it work for this. That’s OK! Reworking old code is an important part of the programmer’s life.
+    Don’t forget to go back and add your new version to the original Rock Paper Scissors Project! */
+
 
     </script>
 </html>
