@@ -20,21 +20,6 @@
 
 let playerScore = 0
 let computerScore = 0
-
-
-/*    function parse(play) {
-
-        if (play.toLowerCase() === "rock") {
-            return "rock";
-        } else if (play.toLowerCase() === "scissors" || play.toLowerCase() === "scissor") {
-            return "scissors"
-        } else if (play.toLowerCase() === "paper") {
-            return "paper"
-        } else {
-            return "Please enter 'rock' 'paper' or 'scissors'"
-        }
-
-    }*/
     
     function computerPlay(num) {
 
@@ -95,9 +80,19 @@ let computerScore = 0
         return num
     }
 
-    function scoreUp(result) {
-        
-              
+    function displayScore() {
+        let playerScore = 0;
+        let computerScore = 0;
+        return "YOU:" + playerScore + "||" + "COM:" + computerScore;
+    }
+
+    function updateScore() {
+        increaseScore()
+        return displayScore()
+    }
+
+    function increaseScore(result) {
+                 
         if (result == "w") {
             ++playerScore
         } else if (result == "l") {
@@ -114,7 +109,7 @@ let computerScore = 0
             str = prompt("Rock. Paper! Scissors!!")
 
             let flav = playRound(parse(str), computerPlay(Math.random() * 10 + 1));
-            scoreUp(flav.slice(0,1))
+            increaseScore(flav.slice(0,1))
 
            console.log("YOU: " + playerScore + " || " + "COM: " + computerScore)
             console.log(flav.slice(1))
@@ -136,7 +131,7 @@ ppr.addEventListener("click", function() { playPaper() })
 sis.addEventListener("click", function() { playScissors() })
 
 let scoreBoard = document.getElementById("scoreBoard")
-scoreBoard.textContent= "0 : 0"
+scoreBoard.textContent= displayScore()
 
 
 /*Go back to your “Rock Paper Scissors” game from a previous lesson and give it a simple UI so that the player can play the game by clicking on buttons rather than typing their answer in a prompt.
