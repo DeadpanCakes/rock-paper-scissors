@@ -78,6 +78,23 @@ let computerScore = 0
     
     }
 
+function playRock() {
+    console.log(playRound("rock", computerPlay(rng())))
+}
+
+function playPaper() {
+    console.log(playRound("paper", computerPlay(rng())))
+}
+
+function playScissors() {
+    console.log(playRound("scissors", computerPlay(rng())))
+}
+
+    function rng() {
+        let num = (Math.random() * 10 + 1)
+        return num
+    }
+
 
     function score(result) {
         
@@ -99,21 +116,25 @@ let computerScore = 0
 
             let flav = playRound(parse(str), computerPlay(Math.random() * 10 + 1));
             score(flav.slice(0,1))
-//
-//           console.log("YOU: " + playerScore + " || " + "COM: " + computerScore)
-//            console.log(flav.slice(1))
-//        }
-//
-//        if (playerScore == 5) {
-//            console.log("YOU WIN")
-//        } else if (computerScore == 5) {
-//            console.log("YOU LOSE")
-//        }
+
+           console.log("YOU: " + playerScore + " || " + "COM: " + computerScore)
+            console.log(flav.slice(1))
+        }
+
+        if (playerScore == 5) {
+            console.log("YOU WIN")
+        } else if (computerScore == 5) {
+            console.log("YOU LOSE")
+        }
     }*/
 
 let rok = document.getElementById("rok")
 let ppr = document.getElementById("ppr")
 let sis = document.getElementById("sis")
+
+rok.addEventListener("click", function() { playRock() })
+ppr.addEventListener("click", function() { playPaper() })
+sis.addEventListener("click", function() { playScissors() })
 
 /*Go back to your “Rock Paper Scissors” game from a previous lesson and give it a simple UI so that the player can play the game by clicking on buttons rather than typing their answer in a prompt.
 
