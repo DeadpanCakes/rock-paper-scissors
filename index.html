@@ -4,7 +4,7 @@
 
 <body>
 
-<h1></h1>
+<div id = "scoreBoard"></div>
 
 <h3></h3>
 
@@ -78,25 +78,24 @@ let computerScore = 0
     
     }
 
-function playRock() {
-    console.log(playRound("rock", computerPlay(rng())))
-}
+    function playRock() {
+        console.log(playRound("rock", computerPlay(rng())))
+    }
 
-function playPaper() {
-    console.log(playRound("paper", computerPlay(rng())))
-}
+    function playPaper() {
+        console.log(playRound("paper", computerPlay(rng())))
+    }
 
-function playScissors() {
-    console.log(playRound("scissors", computerPlay(rng())))
-}
+    function playScissors() {
+        console.log(playRound("scissors", computerPlay(rng())))
+    }
 
     function rng() {
         let num = (Math.random() * 10 + 1)
         return num
     }
 
-
-    function score(result) {
+    function scoreUp(result) {
         
               
         if (result == "w") {
@@ -115,7 +114,7 @@ function playScissors() {
             str = prompt("Rock. Paper! Scissors!!")
 
             let flav = playRound(parse(str), computerPlay(Math.random() * 10 + 1));
-            score(flav.slice(0,1))
+            scoreUp(flav.slice(0,1))
 
            console.log("YOU: " + playerScore + " || " + "COM: " + computerScore)
             console.log(flav.slice(1))
@@ -136,11 +135,15 @@ rok.addEventListener("click", function() { playRock() })
 ppr.addEventListener("click", function() { playPaper() })
 sis.addEventListener("click", function() { playScissors() })
 
+let scoreBoard = document.getElementById("scoreBoard")
+scoreBoard.textContent= "0 : 0"
+
+
 /*Go back to your “Rock Paper Scissors” game from a previous lesson and give it a simple UI so that the player can play the game by clicking on buttons rather than typing their answer in a prompt.
 
     X Copy your original code into a new file so you don’t lose it.
     X For now, remove the logic that plays exactly five rounds.
-    Create three buttons, one for each selection. Add an event listener to the buttons that calls your playRound function with the correct playerSelection every time a button is clicked. (you can keep the console.logs for this step)
+    X Create three buttons, one for each selection. Add an event listener to the buttons that calls your playRound function with the correct playerSelection every time a button is clicked. (you can keep the console.logs for this step)
     Add a div for displaying results and change all of your console.logs into DOM methods.
     Display the running score, and announce a winner of the game once one player reaches 5 points.
     You will likely have to refactor (rework/rewrite) your original code to make it work for this. That’s OK! Reworking old code is an important part of the programmer’s life.
