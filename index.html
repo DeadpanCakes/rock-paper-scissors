@@ -68,7 +68,13 @@ let computerScore = 0
     }
 
     function playRock() {
-        console.log(playRound("rock", computerPlay(rng())))
+        let str = playRound("rock", computerPlay(rng()));
+        increaseScore(str.slice(0,1));
+        console.log(displayScore());
+        console.log(str.slice(1))
+
+        document.getElementById("scoreBoard").textContent = displayScore()
+//        console.log(playRound("rock", computerPlay(rng())))
     }
 
     function playPaper() {
@@ -80,46 +86,25 @@ let computerScore = 0
     }
 
     function displayScore() {
-        let playerScore = 0;
-        let computerScore = 0;
-        return "YOU:" + playerScore + "||" + "COM:" + computerScore;
+            return "YOU:" + playerScore + "||" + "COM:" + computerScore;
     }
 
-    function updateScore() {
-        increaseScore(playRock())
-        return displayScore()
-    }
+//    function updateScore() {
+//        increaseScore(playRock())
+//        return displayScore()
+//    }
 
     function increaseScore(result) {
                  
         if (result == "w") {
-            ++playerScore
+            playerScore += 1
         } else if (result == "l") {
-            ++computerScore
+            computerScore += 1
+        } else if (result == "d") {
+            return "i don't get it"
         }
 
     }
-
-/*    function game() {
-        
-        let str 
-        
-        for (;playerScore < 5 && computerScore < 5;) {
-            str = prompt("Rock. Paper! Scissors!!")
-
-            let flav = playRound(parse(str), computerPlay(Math.random() * 10 + 1));
-            increaseScore(flav.slice(0,1))
-
-           console.log("YOU: " + playerScore + " || " + "COM: " + computerScore)
-            console.log(flav.slice(1))
-        }
-
-        if (playerScore == 5) {
-            console.log("YOU WIN")
-        } else if (computerScore == 5) {
-            console.log("YOU LOSE")
-        }
-    }*/
 
 let rok = document.getElementById("rok")
 let ppr = document.getElementById("ppr")
