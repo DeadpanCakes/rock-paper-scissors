@@ -71,7 +71,13 @@ let computerScore = 0
         let str = playRound("rock", computerPlay(rng()));
         increaseScore(str.slice(0,1));
 
-        document.getElementById("narr").textContent = str.slice(1);
+        if ((playerScore < 5) && (computerScore < 5)) {
+            document.getElementById("narr").textContent = str.slice(1);
+        } else if (playerScore >= 5) {
+            document.getElementById("narr").textContent = "YOU WIN!"
+        } else if (playerScore >= 5) {
+            document.getElementById("narr").textContent = "COM WIN!"
+        }
         document.getElementById("scoreBoard").textContent = displayScore();
     }
 
@@ -79,7 +85,13 @@ let computerScore = 0
         let str = playRound("paper", computerPlay(rng()));
         increaseScore(str.slice(0,1));
 
-        document.getElementById("narr").textContent = str.slice(1);
+        if ((playerScore < 5) && (computerScore < 5)) {
+            document.getElementById("narr").textContent = str.slice(1);
+        } else if (playerScore >= 5) {
+            document.getElementById("narr").textContent = "YOU WIN!"
+        } else if  (playerScore >= 5) {
+            document.getElementById("narr").textContent = "COM WIN!"
+        }
         document.getElementById("scoreBoard").textContent = displayScore();
     }
 
