@@ -85,42 +85,42 @@ let computerScore = 0
     function playRock() {
         
         let str = playRound("rock", computerPlay(rng()));
-        increaseScore(str.slice(0,1));
 
         if ((playerScore < 5) && (computerScore < 5)) {
+            increaseScore(str.slice(0,1));
             document.getElementById("narr").textContent = str.slice(1);
-        } else if (playerScore >= 5) {
-            document.getElementById("narr").textContent = "YOU WIN!"
-        } else if (computerScore >= 5) {
-            document.getElementById("narr").textContent = "COM WIN!"
+        } else if (playerScore == 5) {
+            document.getElementById("narr").textContent = "YOU WIN! Hit Reset To Play Again"
+        } else if (computerScore == 5) {
+            document.getElementById("narr").textContent = "COM WIN! Hit Reset To Play Again"
         }
         document.getElementById("scoreBoard").textContent = displayScore();
     }
 
     function playPaper() {
         let str = playRound("paper", computerPlay(rng()));
-        increaseScore(str.slice(0,1));
 
         if ((playerScore < 5) && (computerScore < 5)) {
+            increaseScore(str.slice(0,1));
             document.getElementById("narr").textContent = str.slice(1);
-        } else if (playerScore >= 5) {
-            document.getElementById("narr").textContent = "YOU WIN!"
-        } else if  (computerScore >= 5) {
-            document.getElementById("narr").textContent = "COM WIN!"
+        } else if (playerScore == 5) {
+            document.getElementById("narr").textContent = "YOU WIN! Hit Reset To Play Again"
+        } else if  (computerScore == 5) {
+            document.getElementById("narr").textContent = "COM WIN! Hit Reset To Play Again"
         }
         document.getElementById("scoreBoard").textContent = displayScore();
     }
 
     function playScissors() {
         let str = (playRound("scissors", computerPlay(rng())));
-        increaseScore(str.slice(0,1));
 
         if ((playerScore < 5) && (computerScore < 5)) {
+            increaseScore(str.slice(0,1));
             document.getElementById("narr").textContent = str.slice(1);
-        } else if (playerScore >= 5) {
-            document.getElementById("narr").textContent = "YOU WIN!"
-        } else if (computerScore >= 5) {
-            document.getElementById("narr").textContent = "COM WIN!"
+        } else if (playerScore == 5) {
+            document.getElementById("narr").textContent = "YOU WIN! Hit Reset To Play Again"
+        } else if (computerScore == 5) {
+            document.getElementById("narr").textContent = "COM WIN! Hit Reset To Play Again"
         }
         document.getElementById("scoreBoard").textContent = displayScore();
     }
