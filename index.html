@@ -6,7 +6,7 @@
 
 <div id = "scoreBoard"></div>
 
-<h3></h3>
+<h3 id = "narr">First To Five Wins. Choose Wisely.</h3>
 
 <button id = "rok">Rock</button>
 
@@ -70,11 +70,9 @@ let computerScore = 0
     function playRock() {
         let str = playRound("rock", computerPlay(rng()));
         increaseScore(str.slice(0,1));
-        console.log(displayScore());
-        console.log(str.slice(1))
 
+        document.getElementById("narr").textContent = str.slice(1)
         document.getElementById("scoreBoard").textContent = displayScore()
-//        console.log(playRound("rock", computerPlay(rng())))
     }
 
     function playPaper() {
@@ -88,11 +86,6 @@ let computerScore = 0
     function displayScore() {
             return "YOU:" + playerScore + "||" + "COM:" + computerScore;
     }
-
-//    function updateScore() {
-//        increaseScore(playRock())
-//        return displayScore()
-//    }
 
     function increaseScore(result) {
                  
@@ -116,6 +109,17 @@ sis.addEventListener("click", function() { playScissors() })
 
 let scoreBoard = document.getElementById("scoreBoard")
 scoreBoard.textContent= displayScore()
+
+
+//Messing around with JS DOM manipulation for practice
+let narr = document.getElementById("narr")
+narr.style.border = "3px solid #8499b1"
+narr.style.margin = "auto"
+narr.style.padding = "auto"
+narr.style.color = "#593f62"
+
+
+document.body.style.background = "#a5c4d4"
 
 
 /*Go back to your “Rock Paper Scissors” game from a previous lesson and give it a simple UI so that the player can play the game by clicking on buttons rather than typing their answer in a prompt.
