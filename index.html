@@ -32,6 +32,10 @@ let computerScore = 0
         }
     }
 
+    function rng() {
+        let num = (Math.random() * 10 + 1)
+        return num
+    }
 
     function playRound(playerSelection, computerSelection) {
         if (playerSelection == "rock") {
@@ -75,11 +79,6 @@ let computerScore = 0
         console.log(playRound("scissors", computerPlay(rng())))
     }
 
-    function rng() {
-        let num = (Math.random() * 10 + 1)
-        return num
-    }
-
     function displayScore() {
         let playerScore = 0;
         let computerScore = 0;
@@ -87,7 +86,7 @@ let computerScore = 0
     }
 
     function updateScore() {
-        increaseScore()
+        increaseScore(playRock())
         return displayScore()
     }
 
