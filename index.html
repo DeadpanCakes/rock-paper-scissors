@@ -1,41 +1,43 @@
 <!DOCTYPE html>
 
 <html>
+
 <head>
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-<h1>ROCK PAPER SCISSORS</h1>
+    <div id="pageContainer">
+        <h1>ROCK PAPER SCISSORS</h1>
+        <div id="scoreBoard"></div>
+        <h3 id="narr">First To Five Wins. Choose Wisely.</h3>
+        <div id="mainContainer">
+            <ul>
+                <li class="moves">
+                    <button id="rok">Rock</button>
+                </li>
 
-<div id = "scoreBoard"></div>
+                <li class="moves">
+                    <button id="ppr">Paper</button id="ppr">
+                </li>
 
-<h3 id = "narr">First To Five Wins. Choose Wisely.</h3>
-
-    <ul>
-        <li class = "moves">
-            <button id = "rok">Rock</button>
-        </li>
-
-        <li class = "moves">
-            <button id = "ppr">Paper</button id = "ppr">
-        </li>
-
-        <li class = "moves"> 
-            <button id = "sis">Scissors</button>
-        </li>
-
-        <li class = "moves">
-            <button id = "reset">Reset</button>
-        </li>
-
-    </ul>
+                <li class="moves">
+                    <button id="sis">Scissors</button>
+                </li>
+            </ul>
+            <div id="options">
+                <button id="reset">Reset</button>
+                <button id="theme">Placeholder</button>
+            </div>
+        </div>
+    </div>
 
 </body>
-    <script>
+<script>
 
-let playerScore = 0
-let computerScore = 0
-    
+    let playerScore = 0
+    let computerScore = 0
+
     function computerPlay(num) {
 
         if (num > 7) {
@@ -77,17 +79,17 @@ let computerScore = 0
             } else {
                 return "dWhat does it look like when two pieces of paper fight anyway?"
             }
-                       
+
         }
-    
+
     }
 
     function playRock() {
-        
+
         let str = playRound("rock", computerPlay(rng()));
 
         if ((playerScore < 5) && (computerScore < 5)) {
-            increaseScore(str.slice(0,1));
+            increaseScore(str.slice(0, 1));
             document.getElementById("narr").textContent = str.slice(1);
         } else if (playerScore == 5) {
             document.getElementById("narr").textContent = "YOU WIN! Hit Reset To Play Again"
@@ -101,11 +103,11 @@ let computerScore = 0
         let str = playRound("paper", computerPlay(rng()));
 
         if ((playerScore < 5) && (computerScore < 5)) {
-            increaseScore(str.slice(0,1));
+            increaseScore(str.slice(0, 1));
             document.getElementById("narr").textContent = str.slice(1);
         } else if (playerScore == 5) {
             document.getElementById("narr").textContent = "YOU WIN! Hit Reset To Play Again"
-        } else if  (computerScore == 5) {
+        } else if (computerScore == 5) {
             document.getElementById("narr").textContent = "COM WIN! Hit Reset To Play Again"
         }
         document.getElementById("scoreBoard").textContent = displayScore();
@@ -115,7 +117,7 @@ let computerScore = 0
         let str = (playRound("scissors", computerPlay(rng())));
 
         if ((playerScore < 5) && (computerScore < 5)) {
-            increaseScore(str.slice(0,1));
+            increaseScore(str.slice(0, 1));
             document.getElementById("narr").textContent = str.slice(1);
         } else if (playerScore == 5) {
             document.getElementById("narr").textContent = "YOU WIN! Hit Reset To Play Again"
@@ -126,11 +128,11 @@ let computerScore = 0
     }
 
     function displayScore() {
-            return "YOU:" + playerScore + "||" + "COM:" + computerScore;
+        return "YOU:" + playerScore + "||" + "COM:" + computerScore;
     }
 
     function increaseScore(result) {
-                 
+
         if (result == "w") {
             playerScore += 1
         } else if (result == "l") {
@@ -148,28 +150,29 @@ let computerScore = 0
         document.getElementById("narr").textContent = "First To Five Wins. Choose Wisely."
     }
 
-let rok = document.getElementById("rok")
-let ppr = document.getElementById("ppr")
-let sis = document.getElementById("sis")
-let reset = document.getElementById("reset")
+    let rok = document.getElementById("rok")
+    let ppr = document.getElementById("ppr")
+    let sis = document.getElementById("sis")
+    let reset = document.getElementById("reset")
 
-rok.addEventListener("click", function() { playRock() })
-ppr.addEventListener("click", function() { playPaper() })
-sis.addEventListener("click", function() { playScissors() })
-reset.addEventListener("click", function() { wipe()})
+    rok.addEventListener("click", function () { playRock() })
+    ppr.addEventListener("click", function () { playPaper() })
+    sis.addEventListener("click", function () { playScissors() })
+    reset.addEventListener("click", function () { wipe() })
 
-let scoreBoard = document.getElementById("scoreBoard")
-scoreBoard.textContent= displayScore()
-
-
-//Messing around with JS DOM manipulation for practice
-let narr = document.getElementById("narr")
-narr.style.border = "3px solid #8499b1"
-narr.style.margin = "auto"
-narr.style.padding = "auto"
-narr.style.color = "#593f62"
+    let scoreBoard = document.getElementById("scoreBoard")
+    scoreBoard.textContent = displayScore()
 
 
-document.body.style.background = "#a5c4d4"
-    </script>
+// //Messing around with JS DOM manipulation for practice
+// let narr = document.getElementById("narr")
+// narr.style.border = "3px solid #8499b1"
+// narr.style.margin = "auto"
+// narr.style.padding = "auto"
+// narr.style.color = "#593f62"
+
+
+// document.body.style.background = "#a5c4d4"
+</script>
+
 </html>
